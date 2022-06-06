@@ -23,13 +23,26 @@ generateButton.addEventListener('click',
     }
     
 
-    //Prezzo finale (prezzo - sconto) e stampa in pagina approssimata ai primi due decimali dopo la virgola
+    //Prezzo finale (prezzo - sconto) e stampa in pagina approssimata a due decimali dopo la virgola
     const finalPrice = price - discount;
     console.log(finalPrice);
     
     document.getElementById('ticket-name').innerHTML = userName;
     document.getElementById('ticket-price').innerHTML = finalPrice.toFixed(2);
-    //document.getElementById('ticket').classList.add('active');
+    document.getElementById('ticket').classList.add('active');
 
     }
 );
+
+const cancelTicket = document.getElementById('cancel-ticket');
+cancelTicket.addEventListener('click',
+function() {
+
+    document.getElementById('user-name').value = '';
+    document.getElementById('user-km').value = '';
+    document.getElementById('user-age').value = 'maggiorenne';
+    document.getElementById('ticket').classList.remove('active');
+} 
+
+
+)
